@@ -1,0 +1,26 @@
+<p>
+  <strong>Name:</strong>
+  <%= @word.title %>
+</p>
+
+<h2>Words</h2>
+<table>
+  <tr>
+    <th><strong>English</strong></th>
+    <th><strong>Japanese</strong></th>
+  </tr>
+<% @word.englishes.each do |english| %>
+  <tr>
+    <th><%= english.enword %></th>
+    <th><%= english.translation %></th>
+    <th><%= link_to 'Destroy Word', [english.word, english], method: :delete, data: { confirm: 'Are you sure?' } %></th>
+  </tr>
+<% end %>
+</table>
+
+<h2>Add a Word:</h2>
+<%= render "englishes/form" %>
+
+
+<%= link_to 'Edit Title', edit_word_path(@word) %> |
+<%= link_to 'Back to Units', words_path %>

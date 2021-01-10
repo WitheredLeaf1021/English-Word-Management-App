@@ -1,0 +1,19 @@
+<h1>Listing Units</h1>
+
+<%= link_to 'New Unit', new_word_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th colspan="2"></th>
+  </tr>
+
+<% @words.each do |word| %>
+  <tr>
+    <td><%= word.title %></td>
+    <td><%= link_to 'Show', word_path(word) %></td>
+    <td><%= link_to 'Edit', edit_word_path(word) %></td>
+    <td><%= link_to 'Destroy', word_path(word), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </tr>
+<% end %>
+</table>

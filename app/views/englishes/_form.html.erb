@@ -1,0 +1,13 @@
+<%= form_with(model: [ @word, @word.englishes.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :englishword %><br>
+    <%= form.text_area :enword %>
+  </p>
+  <p>
+    <%= form.label :translation %><br>
+    <%= form.text_area :translation %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
